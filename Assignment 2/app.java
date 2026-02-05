@@ -42,6 +42,8 @@ public class App {
         // Final Score 
         System.out.println("Your final score is " + score + " out of 3, congratulations");
 
+        //DEBUG BELOW
+
         //for this section: are these all printing the best option? If they aren't, fix it!
         //(However you interpret 'fix' is fine i promise, any way you fix it shows you get the concept to me)
         int var1 = 4;
@@ -85,3 +87,5 @@ public class App {
         }
     }
  }
+
+// I learned how to use if, else if, and else statements in Java! I also learned how to incorporate scanners while using if, else if, and else statements. Finally, this homework taught me how to keep track of increasing scores.
