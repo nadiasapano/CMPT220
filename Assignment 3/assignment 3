@@ -82,3 +82,8 @@ if you're confused reach out!
         }
     }
 }
+// I used google to see if there was a specific function that I could use in order to index through charachers of a string
+// First I created a scanner for the user to input a desired string to answer the question
+// The input is then stored in variable named string 
+// Next, I used a for loop, starting at i, ending at the length of the variable (number of characters)
+// The loop increases 1 per character, once completed, the characters of the string are printed on separate lines, the desired result 
