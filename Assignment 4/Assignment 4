@@ -68,7 +68,7 @@ public class App {
 
         // Skip question 4 
         
-        if (counted)
+        if (counted) // if true, go on
             continue; 
         for (int j =0; j<myArray.length; j++){// this counts how many time number appears
             if (myArray[i]==myArray[j]){
