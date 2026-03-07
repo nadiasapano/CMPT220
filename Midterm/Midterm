@@ -1,0 +1,117 @@
+import java.util.Scanner;
+
+public class App {
+    public static void main(String[] args) throws Exception {
+        
+        // Midterm Project - SD1 Spring 2026 - Nadia Sapano
+        // I will be creating a financial math calculator, with focus on saving accounts. This project will tie together my applied math major with my business minor in a meaningful way
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome to the Financial Math Calculator! We will be looking at your money and seeing some fun things.");
+        System.out.println("How much money do you have saved right now?");
+        double startincome = sc.nextDouble();
+        // Asking user how much money they have saved currently. This is the starting point.
+
+        System.out.println("How much money do you make each month after taxes to save?");
+        double monthlyincome = sc.nextDouble();
+        // Using scanner to ask user their monthly income after taxes.
+
+        System.out.println("What is your interest rate on your savings account? (Enter as a decimal less than 1)");
+        double interest = sc.nextDouble();
+        // Using scanner to ask user for interest rate.
+
+        // Note that interest rate must be positive, lets use a loop to check this condition: 
+        while (interest<0 || interest >= 1){
+            System.out.println("Interest cannot be negative or greater than or equal to 1. Please enter a valid decimal less than 1 for interest rate.");
+            interest= sc.nextDouble();
+        }
+    
+        // Now we have information to do some fun calculations! 
+
+        // Now, we will create a while loop to show money growth per month in one year
+        double monthlymoney = startincome; // start money = initial savings
+        int n = 12; // interest compounded monthly, there are 12 months in one year 
+        int month = 1; // start month at 1 (January)
+
+        while (month <=12) {
+            monthlymoney = (monthlymoney + monthlyincome) * (1+ interest/n);
+            System.out.println("After month "+ month+ " you will have $"+ monthlymoney+ " in your savings account.");
+            month++;
+        }
+        // This while loop will show the user how their money grows each month for one year
+        // Month starts at 1 and will go until month 12. Each month, the loop calculates the new amount of money by applying interest and adding monthly income.
+        // Then, the loop prints out the month and total moeny after that said month 
+        // The loop stops running after month 12, which is the end of the calendar year
+        // Here, income is added to savings, then interest is applied to total amount.
+
+        // Time to use If/Else If/Else statements to give the user feedback on their financial status.
+        if (monthlymoney < 1000){
+            System.out.println("Your savings seem to be low, consider saving more or investing.");
+        }
+        else if (monthlymoney >= 1000 && monthlymoney < 10000){
+            System.out.println("Your savings look decent, but there is always room for improvement.");
+        }
+        else{
+            System.out.println("Your savings look great! Keep it up!");
+        }
+        // These statements will give user valuable insight as to their financial status (almost acting as a financial advisor). Here, best case scenario is having more than $10,000 saved. 
+
+        // Now, I will be using a nested for loop to show the user how their money will grow over 5 years, with intrest compounded monthly. 
+       
+        double yearlyincome = startincome; // Again, start money = initial savings 
+        int years = 5; // We will be looking at growth over 5 years 
+        // we will also be using the same "int n" as before, since interest is still compounded monthly 
+        for (int i =1; i<= years; i++){
+
+            // The outer loop will run once for each year, the inner loop will run 12 times for each month in that year.
+            for (int j=1; j<= 12; j++){
+                yearlyincome = (yearlyincome + monthlyincome) * (1+ interest/n);
+            }
+            System.out.println("After year " + i + " you will have $"+ yearlyincome + " in your account.");
+        }
+
+        // This nested loop shows the user how their money grows in 5 years. Each month, the inner loop calculates the new amount of money by applying interest and adding monthly income.
+        // After 12 months, the outer loop will print out the year and total money for that year. 
+        // The loop will stop running after 5 years. 
+
+        // Now we will use If/Else If/Else statement to give feedback to to the user after 5 years of saving.
+
+        if (yearlyincome < 10000){
+            System.out.println("After 5 years, your savings are low. Consider saving more or investing.");
+        }
+        else if (yearlyincome >= 10000 && yearlyincome < 50000){
+            System.out.println("After 5 years, your savings are decent. There is always room for improvement.");
+        }
+        else{
+            System.out.println("After 5 years, your savings are ideal! Keep it up!");
+        }
+
+        // Now I will be helping the user achieve financial goals. I will use a while loop to see how many months it will take for the user to reach the goal
+        System.out.println("What is your financial goal? (Enter a number)");
+        double goal = sc.nextDouble();
+        double goalmoney = startincome; // start money = initial savings
+        int goalmonth = 0; // start month is zero since we have not begun saving yet
+        while (goalmoney < goal){
+            goalmoney = (goalmoney + monthlyincome) * (1 + interest/n);
+            goalmonth++;
+        }
+        System.out.println("It will take you " + goalmonth + " months to reach your financial goal of $"+goal);
+        // This while loop will tell the user how many months it will take to reach their goal The loop will run until the amount of money in the account (goalmoney) is greater than or equal to the user's goal.
+
+
+        // Project must have 3 or more variables, lets review this condition
+        // startincome: initial amount of savings user has; variable type is a double
+        // monthlyincome: amount of money user makes each month, minus taxes; variable type is a double
+        // interest: interest rate on savings account; variable type is a double 
+        // monthlymoney: running total of how much money user will have in their account each month of a year; variable type is a double 
+        // yearlyincome: running total of how much money user will have in their account each year for 5 years; variable type is a double 
+        // n: number of times interest is compounded in one year; variable type is an integer 
+        // month: represents the current month in the while loop; variable type is an ineger
+        // years: represents the number of years in the nested for loop; variable type is an integer 
+        // i:  OUTER LOOP, represents the current year in the nested loop; variable type is an ineger
+        // j: INNER LOOP, represents the current month in the nested loop; varable type is an integer
+        // goal: user's financial goal; variable type is a double 
+        // goalmoney: running total of how much money user will have in their account while trying to reach their goal; variable type is a double  
+
+    }
+}
