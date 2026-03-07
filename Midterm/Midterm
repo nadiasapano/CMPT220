@@ -98,6 +98,17 @@ public class App {
         System.out.println("It will take you " + goalmonth + " months to reach your financial goal of $"+goal);
         // This while loop will tell the user how many months it will take to reach their goal The loop will run until the amount of money in the account (goalmoney) is greater than or equal to the user's goal.
 
+        // Some Financial advisor suggestions 
+
+        if (goalmonth < 12){
+            System.out.println("Great! You will reach your goal in less than one year! Keep it up and keep saving!");
+        }
+        else if(goalmonth >= 12 && goalmonth < 60){
+            System.out.println("It will take you beterrn 1 and 5 years to reach your goal. This is not ideal, but you can do it!");
+        }
+        else{
+            System.out.println("It will take you over 5 years to reach your financial goal. Consider saving more, getting another job, investing, or getting another job.");
+        }
 
         // Project must have 3 or more variables, lets review this condition
         // startincome: initial amount of savings user has; variable type is a double
