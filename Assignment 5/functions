@@ -1,0 +1,21 @@
+/*
+for this one, if you remember, I asked you to come up with a 'reason' for a function and implement it. 
+Now you get to do it! yay!!!!!
+please go a little more complex than just simple math/simple printing for the function
+feel free to google some inspiration though :)
+*/
+
+// Reason: creating a function that counts the number of characters in a string, including spaces and punctuation.
+public class App {
+    public static void main(String[] args) throws Exception {
+        countcharacters("Hello, World!");
+    }
+     public static void countcharacters(String str) {
+        int count = 0;
+        for (int i = 0; i < str.length(); i++) {
+            count++;
+        }
+        System.out.println("Number of characters in " + str +  " is " + count);
+    }
+    }
+
