@@ -21,5 +21,18 @@ public class App {
 
         // This assignment taught me how to use the rand function to generate random values and implement them within my program. Here I generated random 5 digit ID numbers to compare to my student's IDs
         // I also learned how to create a class with methods. Methods are useful for organizing code, making it very user-friendly and reusable.
+
+        Cat c1= new Cat("Oreo",2, 10);
+        Cat c2= new Cat("Mittens", 7, 16);
+        Cat c3= new Cat("Meow", 4, 12);
+
+        c1.overWeight();
+        c2.overWeight();
+        c3.overWeight();
+
+        c1.old();
+        c2.old();
+        c3.old();
     }
 }
+
